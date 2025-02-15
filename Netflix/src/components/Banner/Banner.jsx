@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import styles from "./banner.module.css";
 import Request from "../../utils/request";
-import Instance from "../../utils/Axion";
+import Instance from "../../utils/Axios";
 function Banner() {
   const [movie, setmovie] = useState({});
   useEffect(() => {
     Instance.get(Request.fetchPopuar).then((res) =>
-      setmovie(res.data.results[Math.floor(Math.random() * res.data.results.length)])
+      setmovie(res.data.results[
+
+        Math.floor(Math.random() * res.data.results.length)
+
+      ])
     );
   }, []);
 
